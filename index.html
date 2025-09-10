@@ -4,102 +4,122 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Shifting Tide</title>
+  <meta name="color-scheme" content="light"> <!-- force light color scheme -->
   <meta name="description" content="The Shifting Tide — A Framework for Owning Irreplaceable Assets in an Era of Systemic Shifts.">
   <style>
-  :root {
-    --bg:#ffffff; --fg:#111111; --muted:#666666; --rule:#e6e6e6; --maxw:820px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#0c0d0f; --fg:#e9eaec; --muted:#a7a7ab; --rule:#202124; }
-  }
+    :root{
+      --bg:#ffffff; --fg:#000000; --muted:#333333; --rule:#e6e6e6; --maxw:820px;
+    }
 
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; padding: 0;
-    background: var(--bg); color: var(--fg);
-    font-family: "Palatino Linotype", Palatino, "URW Palladio L", serif;
-    line-height: 1.65;
-  }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 36px 18px 64px; }
-  header { text-align: center; margin-bottom: 18px; }
-  h1 { margin: 0 0 6px; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.2; }
-  .sub { margin: 0 0 14px; color: var(--muted); }
-  .date { margin: 10px 0 0; color: var(--muted); }
-  p, li { font-size: 1.06rem; text-align: justify; }
-  h2 { margin: 1.8rem 0 .6rem; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; }
-  h3 { margin: 1.2rem 0 .4rem; font-size: 1.15rem; }
-  em { font-style: italic; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--fg);
+      font-family: "Palatino Linotype", Palatino, "URW Palladio L", serif;
+      line-height: 1.65;
+      /* prevent OS/browser dark-mode overrides */
+      color-scheme: light;
+    }
+    a { color: #0000ee; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 36px 18px 64px; }
+    header { text-align: center; margin-bottom: 18px; }
+    h1 { margin: 0 0 6px; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.2; }
+    .sub { margin: 0 0 14px; color: var(--muted); }
+    .date { margin: 10px 0 0; color: var(--muted); }
+    .byline { margin: 4px 0 0; color: var(--muted); }
+    p, li { font-size: 1.06rem; text-align: justify; }
+    h2 { margin: 1.8rem 0 .6rem; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; }
+    h3 { margin: 1.2rem 0 .4rem; font-size: 1.15rem; }
+    em { font-style: italic; }
 
-  /* Section separators */
-  .sep { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+    /* Section separators */
+    .sep { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
 
-  /* Contents (TOC) */
-  nav.toc {
-    border:1px solid var(--rule); border-radius:10px;
-    padding:14px 16px; margin-top:14px;
-    background:rgba(0,0,0,.02);
-  }
-  nav.toc h3{ margin:0 0 8px; font-size:1rem; letter-spacing:.02em; text-align:left; }
-  nav.toc ol{ margin:0; padding-left:1.2rem; }
-  nav.toc a{ color:inherit; text-decoration:none; }
-  nav.toc a:hover{ text-decoration:underline; }
+    /* Contents (TOC) */
+    nav.toc {
+      border:1px solid var(--rule); border-radius:10px;
+      padding:14px 16px; margin-top:14px;
+      background:#fafafa;
+      text-align:left;
+    }
+    nav.toc h3{ margin:0 0 8px; font-size:1rem; letter-spacing:.02em; }
+    nav.toc ol.roman{ margin:0; padding-left:1.2rem; list-style-type: upper-roman; }
+    nav.toc a{ color:inherit; text-decoration:none; }
+    nav.toc a:hover{ text-decoration:underline; }
 
-  /* Side-by-side figures that stack on mobile */
-  .fig-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin: 1.1rem 0;
-  }
-  @media (min-width: 860px) {
-    .fig-row { grid-template-columns: 1fr 1fr; }
-  }
-  .fig-row img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    cursor: zoom-in;
-  }
-  figure { margin: 0; }
+    /* Shrink the “The Shifting Tide” section header to match h3 size */
+    #the-shifting-tide > h2 { font-size: 1.15rem; margin-top: 1.2rem; }
 
-  /* keep single-figure rows within text width */
-  figure.single {
-    max-width: var(--maxw);
-    margin: 1.2rem auto;
-  }
-  figure.single img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    cursor: zoom-in;
-  }
+    /* Side-by-side figures that stack on mobile */
+    .fig-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 1.1rem 0;
+    }
+    @media (min-width: 860px) {
+      .fig-row { grid-template-columns: 1fr 1fr; }
+    }
+    .fig-row img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      cursor: zoom-in;
+    }
+    figure { margin: 1.2rem 0; }
 
-  /* Simple lightbox (native <dialog>) */
-  #zoomDlg { border: 0; padding: 0; background: transparent; }
-  #zoomBackdrop {
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,.75);
-    display: grid; place-items: center;
-  }
-  #zoomBackdrop img {
-    max-width: min(92vw, 1400px);
-    max-height: 92vh;
-    box-shadow: 0 10px 40px rgba(0,0,0,.6);
-    border-radius: 12px;
-    cursor: zoom-out;
-  }
+    /* keep single-figure rows within text width */
+    figure.single {
+      max-width: var(--maxw);
+      margin: 1.2rem auto;
+    }
+    figure.single img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      cursor: zoom-in;
+      display: block;
+    }
 
-  /* Cambria Math equation, centered */
-  .equation {
-    font-family: "Cambria Math", Cambria, "Times New Roman", serif;
-    text-align: center;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    margin: 1rem 0 1.2rem;
-  }
-  .equation sub { font-size: 0.8em; }
-</style>
+    /* Simple lightbox (native <dialog>) */
+    #zoomDlg { border: 0; padding: 0; background: transparent; }
+    #zoomBackdrop {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.75);
+      display: grid; place-items: center;
+    }
+    #zoomBackdrop img {
+      max-width: min(92vw, 1400px);
+      max-height: 92vh;
+      box-shadow: 0 10px 40px rgba(0,0,0,.6);
+      border-radius: 12px;
+      cursor: zoom-out;
+      background:#fff;
+    }
+
+    /* Cambria Math equation, centered */
+    .equation {
+      font-family: "Cambria Math", Cambria, "Times New Roman", serif;
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin: 1rem 0 1.2rem;
+    }
+    .equation sub { font-size: 0.8em; }
+
+    /* Centered, italic line of arrows in IV */
+    .arrowline { text-align:center; font-style:italic; margin: .4rem 0 1rem; }
+
+    /* Bulleted parentheticals with bold tokens in IV */
+    .paren-bullets { list-style: disc; margin: .3rem 0 .9rem 1.2rem; padding: 0; }
+    .paren-bullets li { margin: .25rem 0; }
+    .paren-bullets b { font-weight: 700; }
+
+    /* Centered quote line in VI */
+    .pullquote { text-align:center; margin:.2rem 0 .6rem; }
+    .pullquote em { font-style: italic; }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -108,17 +128,21 @@
       <p class="sub">A Framework for Owning Irreplaceable Assets in an Era of Systemic Shifts</p>
       <p><em>We are in a new regime where stability is thin and promises are fleeting. Only a small set of scarce, durable, and self-funding assets can reliably endure. This paper shows what they are and how to hold them.</em></p>
       <p class="date">September 2025 • Piero Ferrando</p>
+      <p class="byline">
+        <a href="mailto:piero.ferrando@yahoo.com">piero.ferrando@yahoo.com</a> •
+        <a href="https://x.com/pieroferrando_" target="_blank" rel="noopener">X: @pieroferrando_</a>
+      </p>
 
-      <!-- Table of Contents -->
+      <!-- Table of Contents (Roman numerals) -->
       <nav class="toc">
         <h3>Contents</h3>
-        <ol>
-          <li><a href="#lessons-from-livy">The Lessons from Livy</a></li>
+        <ol class="roman">
+          <li><a href="#lessons-from-livy">Lessons from Livy: Rome in the 90s BCE</a></li>
           <li><a href="#the-silent-crisis-in-the-west">The Silent Crisis in the West</a></li>
-          <li><a href="#the-case-for-irreplaceable-enduring-trophy-assets">The Case for Irreplaceable, Enduring Trophy Assets</a></li>
-          <li><a href="#the-arithmetic-of-wealth-preservation-through-irreplaceable-properties">The Arithmetic of Wealth Preservation Through Irreplaceable Properties</a></li>
-          <li><a href="#case-studies">Case Studies: Moments the World Mispriced the Irreplaceable</a></li>
-          <li><a href="#practical-blueprint-for-modern-capital-allocators">Practical Blueprint for Modern Capital Allocators</a></li>
+          <li><a href="#the-case-for-irreplaceable-assets">The Case for Irreplaceable Assets</a></li>
+          <li><a href="#the-arithmetic-of-wealth-preservation">The Arithmetic of Wealth Preservation</a></li>
+          <li><a href="#historic-case-studies">Historic Case Studies</a></li>
+          <li><a href="#a-practical-blueprint">A Practical Blueprint</a></li>
           <li><a href="#conclusion">Conclusion</a></li>
         </ol>
       </nav>
@@ -126,7 +150,7 @@
 
     <hr class="sep" />
 
-    <!-- The Shifting Tide (kept as content, not in TOC per your request) -->
+    <!-- The Shifting Tide (section header resized to h3) -->
     <section id="the-shifting-tide">
       <h2>The Shifting Tide</h2>
       <p>At some point over the past quarter century, the West crossed its Rubicon. Debt, dysfunction, and division ceased to be temporary bugs and hardened into structural features of the system. The era of effortless promises and unquestioned stability has given way to something different: a slow drift into a new order.</p>
@@ -153,58 +177,58 @@
     <hr class="sep" />
 
     <!-- II. The Silent Crisis -->
-<section id="the-silent-crisis-in-the-west">
-  <h2>II. The Silent Crisis in the West</h2>
-  <p>The claim of this section is simple: the West, led by the United States, is past the point of no return. The post-World War II order will, in time, give way to something new. The current system is unsustainable.</p>
-  <p>This is not a matter of opinion. This is a fact. The data speaks for itself, yet few among the public grasp its gravity, and fewer still among the elites are willing to confront it. Here is the evidence:</p>
+    <section id="the-silent-crisis-in-the-west">
+      <h2>II. The Silent Crisis in the West</h2>
+      <p>The claim of this section is simple: the West, led by the United States, is past the point of no return. The post-World War II order will, in time, give way to something new. The current system is unsustainable.</p>
+      <p>This is not a matter of opinion. This is a fact. The data speaks for itself, yet few among the public grasp its gravity, and fewer still among the elites are willing to confront it. Here is the evidence:</p>
 
-  <h3>US debt and interest costs have compounded into a structural bind</h3>
-  <p>America’s fiscal position has decayed: debt has soared past $37 trillion, up 5x in 20 years. Interest payments have already eclipsed spending on national defense and Medicare. Social Security and Medicare themselves carry present-value shortfalls of ~$80 trillion over the next 75 years, lifting the true burden well past ~$100 trillion. Yet the political system, mired in bureaucracy and division, proves unable to come together to confront the problem. Future generations are already mortgaged, and they don’t even know it.</p>
-  <div class="fig-row">
-    <figure><img src="figure1.png" alt="Figure 1" data-zoom></figure>
-    <figure><img src="figure2.png" alt="Figure 2" data-zoom></figure>
-  </div>
+      <h3>US debt and interest costs have compounded into a structural bind</h3>
+      <p>America’s fiscal position has decayed: debt has soared past $37 trillion, up 5x in 20 years. Interest payments have already eclipsed spending on national defense and Medicare. Social Security and Medicare themselves carry present-value shortfalls of ~$80 trillion over the next 75 years, lifting the true burden well past ~$100 trillion. Yet the political system, mired in bureaucracy and division, proves unable to come together to confront the problem. Future generations are already mortgaged, and they don’t even know it.</p>
+      <div class="fig-row">
+        <figure><img src="figure1.png" alt="Figure 1" data-zoom></figure>
+        <figure><img src="figure2.png" alt="Figure 2" data-zoom></figure>
+      </div>
 
-  <h3>Long-term sovereign yields in major Western markets have repriced sharply higher</h3>
-  <p>Despite central banks cutting policy rates, long-term yields keep climbing. The bond market sees through the gesture: investors are demanding higher compensation for holding sovereign debt in the face of fiscal decay. Markets are no longer trusting governments to borrow and print their way out of their problems.</p>
-  <figure class="single"><img src="figure3.png" alt="Figure 3" data-zoom></figure>
+      <h3>Long-term sovereign yields in major Western markets have repriced sharply higher</h3>
+      <p>Despite central banks cutting policy rates, long-term yields keep climbing. The bond market sees through the gesture: investors are demanding higher compensation for holding sovereign debt in the face of fiscal decay. Markets are no longer trusting governments to borrow and print their way out of their problems.</p>
+      <figure class="single"><img src="figure3.png" alt="Figure 3" data-zoom></figure>
 
-  <h3>Official reserves are rotating out of Treasuries and into gold; de-dollarization pressure is visible</h3>
-  <p>Foreign central banks have responded in kind, shifting their reserves away from Treasuries and into bullion. For the first time in 30 years, official gold holdings outweigh US Treasury holdings, a silent but decisive vote of no-confidence in the long-term stability of Western debt.</p>
-  <div class="fig-row">
-    <figure><img src="figure4.png" alt="Figure 4" data-zoom></figure>
-    <figure><img src="figure5.png" alt="Figure 5" data-zoom></figure>
-  </div>
+      <h3>Official reserves are rotating out of Treasuries and into gold; de-dollarization pressure is visible</h3>
+      <p>Foreign central banks have responded in kind, shifting their reserves away from Treasuries and into bullion. For the first time in 30 years, official gold holdings outweigh US Treasury holdings, a silent but decisive vote of no-confidence in the long-term stability of Western debt.</p>
+      <div class="fig-row">
+        <figure><img src="figure4.png" alt="Figure 4" data-zoom></figure>
+        <figure><img src="figure5.png" alt="Figure 5" data-zoom></figure>
+      </div>
 
-  <h3>Loose monetary policy has deepened inequality and fueled resentment</h3>
-  <p>Years of easy money have not revived broad prosperity; instead, they have inflated assets and concentrated capital at the top. Inequality is reaching a boiling point. Housing costs have surged beyond wages, and executive compensation has exploded from 24x the average worker’s pay in 1970 to nearly 300x today. These gaps are not abstract, they feed anger, frustration, and the corrosive belief that the system is rigged.</p>
-  <div class="fig-row">
-    <figure><img src="figure6.png" alt="Figure 6" data-zoom></figure>
-    <figure><img src="figure7.png" alt="Figure 7" data-zoom></figure>
-  </div>
+      <h3>Loose monetary policy has deepened inequality and fueled resentment</h3>
+      <p>Years of easy money have not revived broad prosperity; instead, they have inflated assets and concentrated capital at the top. Inequality is reaching a boiling point. Housing costs have surged beyond wages, and executive compensation has exploded from 24x the average worker’s pay in 1970 to nearly 300x today. These gaps are not abstract, they feed anger, frustration, and the corrosive belief that the system is rigged.</p>
+      <div class="fig-row">
+        <figure><img src="figure6.png" alt="Figure 6" data-zoom></figure>
+        <figure><img src="figure7.png" alt="Figure 7" data-zoom></figure>
+      </div>
 
-  <h3>Optimism is collapsing across the developed world</h3>
-  <p>Across the developed world, optimism has faded: most no longer believe the next generation will be better off than their parents. Meanwhile, confidence in the future is growing across emerging markets. The contrast is telling—where prosperity has matured, hope has waned; where it is still being built, belief endures.</p>
-  <figure class="single"><img src="figure8.png" alt="Figure 8" data-zoom></figure>
+      <h3>Optimism is collapsing across the developed world</h3>
+      <p>Across the developed world, optimism has faded: most no longer believe the next generation will be better off than their parents. Meanwhile, confidence in the future is growing across emerging markets. The contrast is telling—where prosperity has matured, hope has waned; where it is still being built, belief endures.</p>
+      <figure class="single"><img src="figure8.png" alt="Figure 8" data-zoom></figure>
 
-  <h3>Falling fertility and rising immigration have deepened cultural divisions</h3>
-  <p>The collapse of affordability and optimism has reshaped demographics. Birth rates across the developed world have fallen below replacement, while immigration has become both a demographic necessity and a political flashpoint. The result is a combustible mix: aging populations, rising dependency ratios, and social friction that weakens consensus on fiscal reform.</p>
-  <div class="fig-row">
-    <figure><img src="figure9.png" alt="Figure 9" data-zoom></figure>
-    <figure><img src="figure10.png" alt="Figure 10" data-zoom></figure>
-  </div>
+      <h3>Falling fertility and rising immigration have deepened cultural divisions</h3>
+      <p>The collapse of affordability and optimism has reshaped demographics. Birth rates across the developed world have fallen below replacement, while immigration has become both a demographic necessity and a political flashpoint. The result is a combustible mix: aging populations, rising dependency ratios, and social friction that weakens consensus on fiscal reform.</p>
+      <div class="fig-row">
+        <figure><img src="figure9.png" alt="Figure 9" data-zoom></figure>
+        <figure><img src="figure10.png" alt="Figure 10" data-zoom></figure>
+      </div>
 
-  <h3>The renewed arms race: the risks are rising, and so are the costs</h3>
-  <p>Global military expenditure is again marching higher. Great powers are rearming as geopolitical blocs harden. Defense outlays are rising into treasuries already straining under interest costs - a late-stage dynamic for deficit states.</p>
-  <figure class="single"><img src="figure11.png" alt="Figure 11" data-zoom></figure>
-</section>
+      <h3>The renewed arms race: the risks are rising, and so are the costs</h3>
+      <p>Global military expenditure is again marching higher. Great powers are rearming as geopolitical blocs harden. Defense outlays are rising into treasuries already straining under interest costs - a late-stage dynamic for deficit states.</p>
+      <figure class="single"><img src="figure11.png" alt="Figure 11" data-zoom></figure>
+    </section>
 
     <hr class="sep" />
 
     <!-- III. The Case for Irreplaceable Assets -->
-    <section id="the-case-for-irreplaceable-enduring-trophy-assets">
-      <h2>III. The Case for Irreplaceable, Enduring Trophy Assets</h2>
-      <p>The evidence is now clear. Debt, inflation, political dysfunction, and social fracture are all moving in the wrong direction. The West is not stabilizing; it is drifting further into disorder. At this point, the question is no longer if the path is unsustainable, but rather what can be done to protect oneself from the unraveling?</p>
+    <section id="the-case-for-irreplaceable-assets">
+      <h2>III. The Case for Irreplaceable Assets</h2>
+      <p>The evidence is now clear. Debt, inflation, political dysfunction, and social fracture are all moving in the wrong direction. <strong>The West is not stabilizing</strong>; it is drifting further into disorder. At this point, the question is no longer if the path is unsustainable, but rather what can be done to protect oneself from the unraveling?</p>
       <p>History gives us a practical answer. Time after time, through past periods of upheaval, wealth was best preserved not through government paper or speculative bets, but through ownership of tangible, scarce, and enduring assets. These are the kinds of holdings that do not vanish with inflation or political change, but carry their value across generations.</p>
       <p>Not all assets are equal. The rarest of them, the truly irreplaceable and inter-historical, are those that every civilization would recognize as valuable. The same fields that fed Babylon fed the Persians, the Greeks, the Romans, and modern-day Europeans. The same harbors that launched Venetian galleys welcomed British frigates centuries later. The same estates that housed medieval lords became the manors of Renaissance princes and, centuries on, the country homes of modern aristocracy. These places are scarce not only in space but in history; their worth lies as much in legacy as in yield.</p>
       <p>Such assets are not merely monuments to permanence, they can also be enduringly productive. A vineyard like Château Lafite Rothschild in Bordeaux, producing some of the world’s most coveted wines since the 17th century; a harbor such as Porto Cervo in Sardinia, where berths are perpetually scarce and trade at a premium; an estate like Hearst Castle in California, whose lands and legacy continue to generate enduring value. Their yield is steady and tangible, an elegant complement to their intrinsic scarcity, compounding value over generations while enriching those wise enough to steward them.</p>
@@ -214,52 +238,58 @@
     <hr class="sep" />
 
     <!-- IV. Arithmetic -->
-    <section id="the-arithmetic-of-wealth-preservation-through-irreplaceable-properties">
-      <h2>IV. The Arithmetic of Wealth Preservation Through Irreplaceable Properties</h2>
+    <section id="the-arithmetic-of-wealth-preservation">
+      <h2>IV. The Arithmetic of Wealth Preservation</h2>
       <p>Today’s conventional investment rests on the notion that value compounds through yield + principal appreciation. That may be true in 5, 10, or even 15-year investment horizons, but in a world where currencies decay, regimes shift, and institutions erode, the true engine of compounding becomes an asset’s ability to preserve and grow real purchasing power across systematic cycles.</p>
       <p>The logic is simple: If one can tether wealth to an asset that endures beyond the existing systems, something that resists replication, obsolescence, and dilution, then value continues to accrete in real terms over multi-decade stretches, even as the world around the asset mutates. Accordingly, we define the benchmark not as total return, but rather as capital preservation as a function of four deeper forces:</p>
 
-      <!-- Centered equation in Cambria Math -->
       <p class="equation">
         Capital Preservation = Ρ<sub>permanence</sub> × Σ<sub>scarcity</sub> × Τ<sub>secular tailwind</sub> × Υ<sub>yield</sub>
       </p>
 
       <h3>Ρ — Permanence Factor</h3>
       <p>P measures how long an asset has mattered to humans, and therefore how likely it is to continue mattering in the future. It is a temporal multiplier.</p>
-      <p>(P &lt; 0) obsolescence: a new data center development in a remote location</p>
-      <p>(P &gt; 1) permanence: a vineyard that has produced coveted wine continuously for hundreds of years</p>
+      <ul class="paren-bullets">
+        <li><b>(P &lt; 0)</b> obsolescence: a new data center development in a remote location</li>
+        <li><b>(P &gt; 1)</b> permanence: a vineyard that has produced coveted wine continuously for hundreds of years</li>
+      </ul>
       <p>The longer an asset has remained relevant to human affairs, culturally, economically, or strategically, the more powerful its position becomes.</p>
-      <p>Time itself compounds into a form of Lindy network effect: each passing generation adds new layers of memory, myth, and social attachment, deepening the psychological and monetary “moat” around the asset. This creates a self-reinforcing loop:</p>
-      <p>Time → Reputation → Demand → Preservation → More Time</p>
+      <p class="arrowline">Time → Reputation → Demand → Preservation → More Time</p>
       <p>Permanence becomes not merely a static trait, but an accelerating driver of value. In this way, owning an irreplaceable property is not just owning land; it is owning a cultural node with exponential stickiness.</p>
 
       <h3>Σ — Scarcity Factor</h3>
       <p>Σ measures how impossible it is to recreate or substitute the asset, regardless of how old it is. It is a structural/geographic multiplier.</p>
-      <p>(Σ &lt; 0) infinite substitutes: a suburban office building</p>
-      <p>(Σ &gt; 1) extreme scarcity: the only deep-water port on a historic coastline</p>
+      <ul class="paren-bullets">
+        <li><b>(Σ &lt; 0)</b> infinite substitutes: a suburban office building</li>
+        <li><b>(Σ &gt; 1)</b> extreme scarcity: the only deep-water port on a historic coastline</li>
+      </ul>
       <p>Scarcity arises from geographic, historical, cultural, and regulatory constraints that make replication effectively impossible, turning mere rarity into irreplaceability.</p>
       <p>In periods of monetary debasement or hyperinflation, most physical assets rise in nominal terms but often collapse in real purchasing-power terms as distressed owners sell into a deteriorating economy. Ultra-scarce assets, however, behave differently: because there are no substitutes, and because global wealth still competes to own them, they retain, and often increase, their real value even as currencies disintegrate. Irreplaceability thus becomes not just the root of pricing power, but a shield for wealth preservation when the rest of the system is in freefall.</p>
 
       <h3>Τ — Secular Tailwind Factor</h3>
       <p>T measures the long-term systematic currents likely to push an asset’s relevance forward: demographics, cultural ascent, geopolitical repositioning, economic modernization. It is a macro-directional multiplier.</p>
-      <p>(T &lt; 1) headwind: regions of mid-to-long term demographic decline or geopolitical decay</p>
-      <p>(T &gt; 1) tailwind: zones at the center of future societal gravitas</p>
+      <ul class="paren-bullets">
+        <li><b>(T &lt; 1)</b> headwind: regions of mid-to-long term demographic decline or geopolitical decay</li>
+        <li><b>(T &gt; 1)</b> tailwind: zones at the center of future societal gravitas</li>
+      </ul>
       <p>Even a perfectly irreplaceable asset can stagnate, or depreciate in real terms, if it sits in a geography facing population decline, capital flight, collapsing institutions, or weak property protections. Conversely, assets embedded in regions experiencing durable, long-term momentum (e.g., Southeast Asia’s demographic boom, the cultural renaissance of the Eastern Mediterranean, the enduring legitimacy of Anglo-American legal systems) accrue relevance simply by standing still as the world moves toward them.</p>
       <p>As such, the rule-of-law, whether enforced formally through courts or informally through a culture’s moral, ethical, or theological constraints, serves as a critical underpinning of Τ, reducing the risk of confiscation and reinforcing the compounding effect. Τ therefore captures the wind at the asset’s back, ensuring that P (permanence) and Σ (scarcity) are amplified rather than eroded by the passage of time.</p>
 
       <h3>Υ — Yield Factor</h3>
       <p>Υ reflects an asset’s ability to generate enough cash flow to fund its own preservation indefinitely. It is a self-sufficiency multiplier.</p>
-      <p>(Υ &lt; 1) financial sink: reliant on outside capital, prone to decay or forced sale</p>
-      <p>(Υ &gt; 1) self-sustaining: generates sufficient income to preserve itself into perpetuity</p>
+      <ul class="paren-bullets">
+        <li><b>(Υ &lt; 1)</b> financial sink: reliant on outside capital, prone to decay or forced sale</li>
+        <li><b>(Υ &gt; 1)</b> self-sustaining: generates sufficient income to preserve itself into perpetuity</li>
+      </ul>
       <p>While traditional investment treats yield as the end goal, in this strategy it serves a more basic function: ensuring the owner never needs to sell, lever imprudently, or defer maintenance, all of which accelerate decay and value destruction.</p>
       <p>An asset that earns enough to fund its own operations, upkeep, and protections can survive uninterrupted across generations and thereby allow permanence, scarcity, and tailwinds to compound. Conversely, an asset that requires continual external funding or debt will eventually be sold, diluted, or abandoned, regardless of how unique it is. Yield is thus the economic bloodstream that keeps irreplaceable assets alive into perpetuity to fulfill their preservation mandate.</p>
     </section>
 
     <hr class="sep" />
 
-    <!-- V. Case Studies -->
-    <section id="case-studies">
-      <h2>V. Case Studies: Moments the World Mispriced the Irreplaceable</h2>
+    <!-- V. Historic Case Studies -->
+    <section id="historic-case-studies">
+      <h2>V. Historic Case Studies</h2>
       <p>There is significant historical precedent through which visionary families have quietly amassed enduring wealth not through clever financial alchemy, but by acquiring mispriced, irreplaceable assets at moments when their intrinsic value was opaque to others. These examples, ancient, imperial, and modern, demonstrate how permanence, scarcity, secular tailwinds, and self-sufficiency can translate modest sums into dynastic fortunes over decades or centuries.</p>
 
       <h3>Classical Examples</h3>
@@ -291,10 +321,10 @@
 
     <hr class="sep" />
 
-    <!-- VI. Practical Blueprint -->
-    <section id="practical-blueprint-for-modern-capital-allocators">
-      <h2>VI. Practical Blueprint for Modern Capital Allocators</h2>
-      <p>“Land is a fund of wealth, indestructible by human power”<br/>John Stuart Mill</p>
+    <!-- VI. A Practical Blueprint -->
+    <section id="a-practical-blueprint">
+      <h2>VI. A Practical Blueprint</h2>
+      <p class="pullquote"><em>“Land is a fund of wealth, indestructible by human power”</em><br/>John Stuart Mill</p>
       <p>To apply the arithmetic of longevity in today’s world, capital allocators must begin by acknowledging that durable purchasing-power preservation cannot be achieved through passive exposure, quarterly benchmarking, or liquidity-optimization. Instead, it requires a deliberate, multi-decade vehicle designed to acquire, steward, and protect scarce, permanent assets whose value compounds along axes (Ρ, Σ, Τ, Υ) that traditional financial accounting does not capture, yet which history repeatedly rewards.</p>
 
       <h3>1. Design a vehicle built for permanence, not exit</h3>
