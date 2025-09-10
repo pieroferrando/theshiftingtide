@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Shifting Tide — Paper</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; line-height: 1.5; }
+    header { margin-bottom: 1rem; }
+    h1 { margin: 0 0 .25rem 0; }
+    .btn { display:inline-block; padding:.6rem 1rem; border:1px solid #222; border-radius:8px; text-decoration:none; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    iframe { width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px; }
+    footer { margin-top: 1rem; font-size: .9rem; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>The Shifting Tide</h1>
+      <p>White paper (PDF) — embedded below. You can also download it.</p>
+      <p><a class="btn" href="paper.pdf" download>Download PDF</a></p>
+    </header>
+
+    <!-- Replace paper.pdf with your actual filename if different -->
+    <iframe src="paper.pdf" title="The Shifting Tide PDF"></iframe>
+
+    <footer>
+      <p>&copy; <span id="y"></span> The Shifting Tide</p>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
