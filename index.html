@@ -6,83 +6,100 @@
   <title>The Shifting Tide</title>
   <meta name="description" content="The Shifting Tide — A Framework for Owning Irreplaceable Assets in an Era of Systemic Shifts.">
   <style>
-    :root{
-      --bg:#ffffff; --fg:#111111; --muted:#666666; --rule:#e6e6e6; --maxw:820px;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{ --bg:#0c0d0f; --fg:#e9eaec; --muted:#a7a7ab; --rule:#202124; }
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; padding: 0;
-      background: var(--bg); color: var(--fg);
-      font-family: "Palatino Linotype", Palatino, "URW Palladio L", serif;
-      line-height: 1.65;
-    }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 36px 18px 64px; }
-    header { text-align: center; margin-bottom: 18px; }
-    h1 { margin: 0 0 6px; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.2; }
-    .sub { margin: 0 0 14px; color: var(--muted); }
-    .date { margin: 10px 0 0; color: var(--muted); }
-    p, li { font-size: 1.06rem; text-align: justify; }
-    h2 { margin: 1.8rem 0 .6rem; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; }
-    h3 { margin: 1.2rem 0 .4rem; font-size: 1.15rem; }
-    em { font-style: italic; }
+  :root {
+    --bg:#ffffff; --fg:#111111; --muted:#666666; --rule:#e6e6e6; --maxw:820px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0c0d0f; --fg:#e9eaec; --muted:#a7a7ab; --rule:#202124; }
+  }
 
-    /* Section separators */
-    .sep { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--fg);
+    font-family: "Palatino Linotype", Palatino, "URW Palladio L", serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 36px 18px 64px; }
+  header { text-align: center; margin-bottom: 18px; }
+  h1 { margin: 0 0 6px; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.2; }
+  .sub { margin: 0 0 14px; color: var(--muted); }
+  .date { margin: 10px 0 0; color: var(--muted); }
+  p, li { font-size: 1.06rem; text-align: justify; }
+  h2 { margin: 1.8rem 0 .6rem; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; }
+  h3 { margin: 1.2rem 0 .4rem; font-size: 1.15rem; }
+  em { font-style: italic; }
 
-    /* Contents (TOC) */
-    nav.toc { border:1px solid var(--rule); border-radius:10px; padding:14px 16px; margin-top:14px; background:rgba(0,0,0,.02); }
-    nav.toc h3{ margin:0 0 8px; font-size:1rem; letter-spacing:.02em; text-align:left; }
-    nav.toc ol{ margin:0; padding-left:1.2rem; }
-    nav.toc a{ color:inherit; text-decoration:none; }
-    nav.toc a:hover{ text-decoration:underline; }
+  /* Section separators */
+  .sep { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
 
-    /* Side-by-side figures that stack on mobile */
-    .fig-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin: 1.1rem 0;
-    }
-    @media (min-width: 860px) {
-      .fig-row { grid-template-columns: 1fr 1fr; }
-    }
-    .fig-row img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      cursor: zoom-in;
-    }
-    figure { margin: 0; }
+  /* Contents (TOC) */
+  nav.toc {
+    border:1px solid var(--rule); border-radius:10px;
+    padding:14px 16px; margin-top:14px;
+    background:rgba(0,0,0,.02);
+  }
+  nav.toc h3{ margin:0 0 8px; font-size:1rem; letter-spacing:.02em; text-align:left; }
+  nav.toc ol{ margin:0; padding-left:1.2rem; }
+  nav.toc a{ color:inherit; text-decoration:none; }
+  nav.toc a:hover{ text-decoration:underline; }
 
-    /* Simple lightbox (native <dialog>) */
-    #zoomDlg { border: 0; padding: 0; background: transparent; }
-    #zoomBackdrop {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,.75);
-      display: grid; place-items: center;
-    }
-    #zoomBackdrop img {
-      max-width: min(92vw, 1400px);
-      max-height: 92vh;
-      box-shadow: 0 10px 40px rgba(0,0,0,.6);
-      border-radius: 12px;
-      cursor: zoom-out;
-    }
+  /* Side-by-side figures that stack on mobile */
+  .fig-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 1.1rem 0;
+  }
+  @media (min-width: 860px) {
+    .fig-row { grid-template-columns: 1fr 1fr; }
+  }
+  .fig-row img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    cursor: zoom-in;
+  }
+  figure { margin: 0; }
 
-    /* Cambria Math equation, centered */
-    .equation {
-      font-family: "Cambria Math", Cambria, "Times New Roman", serif;
-      text-align: center;
-      font-size: 1.25rem;
-      line-height: 1.4;
-      margin: 1rem 0 1.2rem;
-    }
-    .equation sub { font-size: 0.8em; }
-  </style>
+  /* keep single-figure rows within text width */
+  figure.single {
+    max-width: var(--maxw);
+    margin: 1.2rem auto;
+  }
+  figure.single img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: zoom-in;
+  }
+
+  /* Simple lightbox (native <dialog>) */
+  #zoomDlg { border: 0; padding: 0; background: transparent; }
+  #zoomBackdrop {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.75);
+    display: grid; place-items: center;
+  }
+  #zoomBackdrop img {
+    max-width: min(92vw, 1400px);
+    max-height: 92vh;
+    box-shadow: 0 10px 40px rgba(0,0,0,.6);
+    border-radius: 12px;
+    cursor: zoom-out;
+  }
+
+  /* Cambria Math equation, centered */
+  .equation {
+    font-family: "Cambria Math", Cambria, "Times New Roman", serif;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 1rem 0 1.2rem;
+  }
+  .equation sub { font-size: 0.8em; }
+</style>
 </head>
 <body>
   <div class="wrap">
@@ -150,7 +167,7 @@
 
   <h3>Long-term sovereign yields in major Western markets have repriced sharply higher</h3>
   <p>Despite central banks cutting policy rates, long-term yields keep climbing. The bond market sees through the gesture: investors are demanding higher compensation for holding sovereign debt in the face of fiscal decay. Markets are no longer trusting governments to borrow and print their way out of their problems.</p>
-  <figure><img src="figure3.png" alt="Figure 3" data-zoom></figure>
+  <figure class="single"><img src="figure3.png" alt="Figure 3" data-zoom></figure>
 
   <h3>Official reserves are rotating out of Treasuries and into gold; de-dollarization pressure is visible</h3>
   <p>Foreign central banks have responded in kind, shifting their reserves away from Treasuries and into bullion. For the first time in 30 years, official gold holdings outweigh US Treasury holdings, a silent but decisive vote of no-confidence in the long-term stability of Western debt.</p>
@@ -168,7 +185,7 @@
 
   <h3>Optimism is collapsing across the developed world</h3>
   <p>Across the developed world, optimism has faded: most no longer believe the next generation will be better off than their parents. Meanwhile, confidence in the future is growing across emerging markets. The contrast is telling—where prosperity has matured, hope has waned; where it is still being built, belief endures.</p>
-  <figure><img src="figure8.png" alt="Figure 8" data-zoom></figure>
+  <figure class="single"><img src="figure8.png" alt="Figure 8" data-zoom></figure>
 
   <h3>Falling fertility and rising immigration have deepened cultural divisions</h3>
   <p>The collapse of affordability and optimism has reshaped demographics. Birth rates across the developed world have fallen below replacement, while immigration has become both a demographic necessity and a political flashpoint. The result is a combustible mix: aging populations, rising dependency ratios, and social friction that weakens consensus on fiscal reform.</p>
@@ -179,7 +196,7 @@
 
   <h3>The renewed arms race: the risks are rising, and so are the costs</h3>
   <p>Global military expenditure is again marching higher. Great powers are rearming as geopolitical blocs harden. Defense outlays are rising into treasuries already straining under interest costs - a late-stage dynamic for deficit states.</p>
-  <figure><img src="figure11.png" alt="Figure 11" data-zoom></figure>
+  <figure class="single"><img src="figure11.png" alt="Figure 11" data-zoom></figure>
 </section>
 
     <hr class="sep" />
