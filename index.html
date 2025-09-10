@@ -3,65 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Shifting Tide</title>
-  <meta name="description" content="The Shifting Tide — a paper on enduring assets in an era of systemic shifts.">
+  <title>The Shifting Tide — A Framework for Owning Irreplaceable Assets</title>
+  <meta name="description" content="A framework for owning irreplaceable assets in an era of systemic shifts.">
   <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #111111;
-      --muted: #666666;
-      --maxw: 820px;
-      --accent: #0b6bcb;
-      --rule: #eaeaea;
+    :root{
+      --bg:#fff; --fg:#111; --muted:#666; --rule:#e9e9e9; --accent:#0b6bcb; --maxw:820px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg:#0b0b0c; --fg:#e9e9ea; --muted:#a7a7ab; --rule:#202124; }
-      img { filter: none; }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0c0d0f; --fg:#e9eaec; --muted:#a7a7ab; --rule:#1c1d21; --accent:#4da3ff; }
     }
-    html, body { background: var(--bg); color: var(--fg); margin: 0; padding: 0; }
-    body { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; line-height: 1.65; }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px 18px 64px; }
-    header { margin-bottom: 18px; }
-    h1 { font-size: clamp(28px, 3.6vw, 40px); margin: 0 0 4px; line-height: 1.2; }
-    .sub { color: var(--muted); margin: 0 0 14px; }
-    .byline { color: var(--muted); font-size: 0.95rem; margin-bottom: 22px; }
-    hr { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
-
-    /* TOC */
-    .toc { border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; background: rgba(0,0,0,0.02); }
-    .toc h3 { margin: 0 0 8px; font-size: 1rem; letter-spacing:.02em; }
-    .toc ol { margin: 0; padding-left: 18px; }
-    .toc a { color: var(--fg); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
-
-    /* Body */
-    h2 { margin-top: 2.1rem; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.3; }
-    h3 { margin-top: 1.6rem; font-size: 1.2rem; }
-    p, li { font-size: 1.05rem; }
-    p { margin: 0 0 1rem; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Figures */
-    figure { margin: 1.4rem 0; }
-    figcaption { color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
-    img { display: block; width: 100%; height: auto; border-radius: 10px; }
-
-    /* Pull quotes / notes (optional) */
-    .note { border-left: 3px solid var(--rule); padding: .6rem 1rem; color: var(--muted); background: rgba(0,0,0,0.03); border-radius: 6px; }
-
-    footer { margin-top: 2.5rem; color: var(--muted); font-size: .95rem; }
+    html,body{background:var(--bg);color:var(--fg);margin:0;padding:0}
+    body{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; line-height:1.65}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:32px 18px 64px}
+    header{margin-bottom:8px}
+    h1{margin:.2rem 0 .3rem; font-size:clamp(28px,3.6vw,40px); line-height:1.2}
+    .sub{color:var(--muted); margin:0 0 12px}
+    .byline{color:var(--muted); font-size:.95rem; margin:0 0 18px}
+    hr{border:0; border-top:1px solid var(--rule); margin:22px 0}
+    h2{margin-top:2.1rem; font-size:clamp(22px,2.6vw,28px); line-height:1.3}
+    h3{margin-top:1.4rem; font-size:1.15rem}
+    p, li{font-size:1.06rem}
+    p{margin:0 0 1rem}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .toc{border:1px solid var(--rule); border-radius:10px; padding:14px 16px; background:rgba(0,0,0,.02)}
+    .toc h3{margin:0 0 8px; font-size:1rem; letter-spacing:.02em}
+    .toc ol{margin:0; padding-left:18px}
+    figure{margin:1.2rem 0}
+    figcaption{color:var(--muted); font-size:.95rem; margin-top:6px}
+    img{display:block; width:100%; height:auto; border-radius:10px}
+    .note{border-left:3px solid var(--rule); padding:.6rem 1rem; color:var(--muted); background:rgba(0,0,0,.03); border-radius:6px}
+    footer{margin-top:2.5rem; color:var(--muted); font-size:.95rem}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <h1>The Shifting Tide</h1>
-      <p class="sub">Enduring assets in an era of systemic shifts.</p>
-      <div class="byline">By Piero Ferrando — <span id="today"></span></div>
+      <p class="sub">A Framework for Owning Irreplaceable Assets in an Era of Systemic Shifts</p>
+      <div class="byline">September 2025 • By Piero Ferrando</div>
     </header>
 
-    <!-- Optional: auto-generated table of contents -->
     <nav class="toc" id="toc">
       <h3>Contents</h3>
       <ol id="toc-list"></ol>
@@ -69,52 +51,135 @@
 
     <hr/>
 
-    <!-- ===== YOUR PAPER STARTS HERE ===== -->
-    <h2 id="intro">I. Introduction</h2>
-    <p>Replace this paragraph with the opening of your paper…</p>
+    <section id="prologue">
+      <h2>Prologue</h2>
+      <p>We are in a new regime where stability is thin and promises are fleeting. Only a small set of scarce, durable, and self-funding assets can reliably endure. This paper shows what they are and how to hold them.</p>
+    </section>
 
-    <h2 id="context">II. Historical Context</h2>
-    <p>Write your text here. You can add <strong>bold</strong>, <em>italics</em>, and links.</p>
+    <section id="the-shifting-tide">
+      <h2>The Shifting Tide</h2>
+      <p>At some point over the past quarter century, the West crossed its Rubicon. Debt, dysfunction, and division ceased to be temporary bugs and hardened into structural features of the system. The era of effortless promises and unquestioned stability has given way to something different: a slow drift into a new order.</p>
+      <p>History shows that civilizations adapt, economies restructure, and new systems eventually emerge. But these transitions are rarely smooth; they are disruptive and often marked by a redistribution of power and capital. While the exact shape or timing of the next order cannot be known, the trajectory is clear: what matters now is how one endures the shifting tide.</p>
+      <h3>Anchoring in Permanence</h3>
+      <p>Across civilizations, enduring wealth was rarely built on sovereign promises or speculation. It rested instead on the truly irreplaceable: land, ports, monuments, farmland, and productive estates—assets that carried value across generations, currencies, and governments.</p>
+      <p>This paper makes the case that wealth preservation in the modern era depends on that same foundation. Irreplaceable assets share four qualities: <em>permanence</em>, <em>scarcity</em>, <em>alignment with long-term demand</em>, and <em>self-sustaining yield</em>. Ownership alone is not enough; it requires stewardship through disciplined leverage, long horizons, and governance resilient to shocks. The challenge is clear: own what cannot be replicated.</p>
+    </section>
 
-    <figure>
-      <img src="images/figure1.png" alt="Real rates vs. asset multiples over time">
-      <figcaption>Figure 1. Real rates and the compression of permanence premia.</figcaption>
-    </figure>
+    <section id="i-livy">
+      <h2>I. Lessons from Livy: Rome in the 90s&nbsp;BCE</h2>
+      <p>In the last days of the Roman Republic, the world’s mightiest state trembled under the weight of its own contradictions. Rome, rich from conquest and swollen with power, found its foundations rotting. Allies long denied citizenship rose in rebellion; inequality deepened; populist demagogues eroded institutions; and civil war consumed the land.</p>
+      <p>To a patrician of c.&nbsp;91&nbsp;BCE, the future may have seemed survivable—until it wasn’t. Within decades came proscriptions, confiscations, and a radical reshaping of ownership. The Republic gave way to empire only after a century of bloodshed and chaos. <em>Historia non facit saltum</em>—history does not make leaps. Shifts unfold gradually until the world no longer resembles what it once was.</p>
+      <p>Today, echoes abound: spiraling sovereign debts, eroding currencies, demographic decline, and class conflict. Wealth not wisely stewarded may not outlast the century to come.</p>
+    </section>
 
-    <h2 id="framework">III. Investment Framework</h2>
-    <p>Explain your framework…</p>
+    <section id="ii-silent-crisis">
+      <h2>II. The Silent Crisis in the West</h2>
+      <p><strong>Claim:</strong> the post-WWII order will, in time, give way to something new; the current system is unsustainable.</p>
+      <h3>Debt &amp; Interest</h3>
+      <p>U.S. debt has surged past $37T in two decades. Interest outlays now eclipse national defense and Medicare, while Social Security and Medicare carry present-value shortfalls on the order of tens of trillions. The political system remains unable to confront the bind.</p>
+      <figure>
+        <img src="images/figure1.png" alt="US Government Debt and Interest Outlays over time">
+        <figcaption>Figure&nbsp;1: U.S. Government Debt &amp; Interest Outlays (illustrative slot for your chart).</figcaption>
+      </figure>
+      <h3>Long-Term Yields Repricing</h3>
+      <p>Despite policy-rate cuts, long-term sovereign yields in major Western markets have repriced higher—investors demanding compensation for fiscal decay.</p>
+      <figure>
+        <img src="images/figure3.png" alt="Western 10-Year Sovereign Bond Yields">
+        <figcaption>Figure&nbsp;3: Western 10-year yields (slot).</figcaption>
+      </figure>
+      <h3>Reserve Rotation</h3>
+      <p>Official reserves have rotated from Treasuries toward gold—a quiet vote of no-confidence in Western debt.</p>
+      <figure>
+        <img src="images/figure4.png" alt="Central bank reserve composition: Treasuries vs Gold">
+        <figcaption>Figure&nbsp;4: Central bank reserves (slot).</figcaption>
+      </figure>
+      <h3>Inequality &amp; Optimism</h3>
+      <p>Easy money inflated assets and concentrated capital, fueling resentment. Housing outpaced wages; CEO-to-worker pay ratios exploded. Optimism about the next generation has collapsed across developed nations.</p>
+      <figure>
+        <img src="images/figure6.png" alt="Wages vs Housing index">
+        <figcaption>Figure&nbsp;6: U.S. wages vs. housing (slot).</figcaption>
+      </figure>
+      <h3>Demography, Migration, and Division</h3>
+      <p>Fertility fell below replacement across the developed world. Immigration supplies labor but inflames polarized politics.</p>
+      <h3>Renewed Arms Race</h3>
+      <p>Global military expenditure has climbed beyond Cold-War highs even as treasuries strain—late-stage republics reach for arms rather than reform.</p>
+    </section>
 
-    <h3 id="pillar1">Pillar A — Permanence</h3>
-    <p>…</p>
+    <section id="iii-case-irreplaceable">
+      <h2>III. The Case for Irreplaceable, Enduring Trophy Assets</h2>
+      <p>Debt, inflation, political dysfunction, and social fracture are worsening. Through past upheavals, wealth was best preserved not via government paper or speculation but through tangible, scarce, enduring assets that retain purchasing power across regimes.</p>
+      <p>The rarest assets are recognized by every civilization: fertile fields, strategic harbors, vineyards and estates with centuries of cultural relevance. These are scarce not only in space but in time, their worth rooted in legacy and reinforced by steady, tangible yield.</p>
+      <p>Owning such treasures is stewardship: holding what time, inflation, and political whim cannot debase.</p>
+    </section>
 
-    <h3 id="pillar2">Pillar B — Scarcity</h3>
-    <p>…</p>
+    <section id="iv-arithmetic">
+      <h2>IV. The Arithmetic of Wealth Preservation</h2>
+      <p>In unstable regimes, the true engine of compounding is an asset’s capacity to preserve and grow real purchasing power across cycles. Benchmark success not by short-term total return but by a deeper product of four forces:</p>
+      <p><strong>Capital&nbsp;Preservation = Π&nbsp;(Permanence) × Σ&nbsp;(Scarcity) × Τ&nbsp;(Secular&nbsp;Tailwind) × Υ&nbsp;(Yield)</strong></p>
 
-    <figure>
-      <img src="images/figure2.png" alt="Supply scarcity index across asset classes">
-      <figcaption>Figure 2. Supply scarcity index across asset classes.</figcaption>
-    </figure>
+      <h3>Π — Permanence Factor</h3>
+      <p>Measures how long an asset has mattered to humans. Lindy-like compounding builds a moat of memory, myth, reputation, and demand that reinforces preservation.</p>
 
-    <h2 id="case">IV. Cases & Implications</h2>
-    <p>…</p>
+      <h3>Σ — Scarcity Factor</h3>
+      <p>Measures how impossible the asset is to recreate or substitute. In debasement, ultra-scarce assets retain or increase real value because global wealth competes for what cannot be replicated.</p>
 
-    <h2 id="conclusion">V. Conclusion</h2>
-    <p>…</p>
-    <!-- ===== YOUR PAPER ENDS HERE ===== -->
+      <h3>Τ — Secular Tailwind Factor</h3>
+      <p>Captures macro currents (demographics, culture, geopolitics, rule-of-law). Scarce land in an ascendant region differs profoundly from scarce land in a collapsing polity.</p>
+
+      <h3>Υ — Yield Factor</h3>
+      <p>Self-sufficiency multiplier: can the asset fund its own preservation indefinitely? Yield ensures owners are never forced sellers and allows permanence and scarcity to compound.</p>
+    </section>
+
+    <section id="v-cases">
+      <h2>V. Case Studies: Moments the World Mispriced the Irreplaceable</h2>
+      <h3>Classical Examples</h3>
+      <ul>
+        <li><strong>Louisiana Purchase (1803)</strong> — $15M secured river systems that now underpin trillions in GDP.</li>
+        <li><strong>Hong Kong (1842)</strong> — Dismissed as barren rock; evolved into a $1T+ finance and real-estate hub.</li>
+        <li><strong>Alaska (1867)</strong> — Sold for $7.2M; gold, oil, fisheries, and military value yielded immense strategic wealth.</li>
+        <li><strong>Suez Canal Shares (1875)</strong> — £4M for command over Europe–Asia trade routes.</li>
+        <li><strong>Macau (1557)</strong> — Token rent gateway to Asian riches; later one of the richest cities per capita.</li>
+        <li><strong>Medici Tuscany</strong> — “Useless” rural lands became the economic heartland of Renaissance power.</li>
+      </ul>
+      <h3>Modern Examples</h3>
+      <ul>
+        <li><strong>Rockefeller Center (1930s)</strong> — Built at depression costs; >$50B iconic cash-flowing asset.</li>
+        <li><strong>Abu Dhabi Desert Lands</strong> — Early consolidation; oil transformed “worthless” desert into a $1T+ sovereign base.</li>
+        <li><strong>Singapore (1960s–70s)</strong> — Low-value parcels became Marina Bay, Orchard, and the CBD.</li>
+        <li><strong>Canary Wharf (1980s)</strong> — Derelict docks into Europe’s #2 financial center.</li>
+        <li><strong>Pudong, Shanghai (1990s)</strong> — Farmland to one of Asia’s densest HQ clusters.</li>
+        <li><strong>Dubai, Jebel Ali (1985)</strong> — Cheap/free land seeding a world-class logistics hub.</li>
+      </ul>
+    </section>
+
+    <section id="vi-blueprint">
+      <h2>VI. Practical Blueprint for Modern Capital Allocators</h2>
+      <ol>
+        <li><strong>Design for permanence, not exit.</strong> Perpetual vehicles with governance guardrails and constitutional limits on asset sales.</li>
+        <li><strong>Prioritize relationships over auctions.</strong> Patient access to families, institutions, and sovereigns; capital “patient on call.”</li>
+        <li><strong>Conservative financing.</strong> Leverage as scalpel, not sword: long-dated, non-recourse, modest; keep Υ&nbsp;≥&nbsp;1.</li>
+        <li><strong>Align with secular tailwinds; diversify regime-risk.</strong> Spread across legal regimes and civilizations to reduce confiscation/climatic shocks.</li>
+        <li><strong>Steward actively; monetize selectively; signal permanence.</strong> Restoration, storytelling, judicious access, and prestige reinforcement elevate Π and Σ over time.</li>
+      </ol>
+    </section>
+
+    <section id="vii-conclusion">
+      <h2>VII. Conclusion</h2>
+      <p>In an era of fiscal debasement, geopolitical entropy, and cultural fragmentation, anchoring capital in irreplaceable, stewarded, conservatively financed assets—aligned with secular tailwinds and held patiently—offers a path to preserve and magnify purchasing power and cultural capital across generations.</p>
+    </section>
 
     <footer>
       &copy; <span id="year"></span> The Shifting Tide. All rights reserved.
     </footer>
   </div>
 
-  <!-- Tiny script: date + automatic ToC from H2s -->
   <script>
+    // Dates
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('today').textContent = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
 
+    // Auto-generate TOC from H2s
     const tocList = document.getElementById('toc-list');
-    const heads = document.querySelectorAll('h2[id]');
-    heads.forEach((h, i) => {
+    document.querySelectorAll('h2[id]').forEach(h => {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = '#' + h.id;
