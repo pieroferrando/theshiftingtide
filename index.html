@@ -41,6 +41,11 @@
     .backdrop{ position:fixed; inset:0; background:rgba(0,0,0,.75); display:grid; place-items:center; }
     .backdrop img{ max-width:min(92vw,1400px); max-height:92vh; box-shadow:0 10px 40px rgba(0,0,0,.6); border-radius:12px; cursor:zoom-out; background:#fff; }
       .fig-pair{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:1rem 0; }
+
+    /* --- Left-align all list items (TOC, bullets, ordered lists, lists in tables) --- */
+    li { text-align:left; }
+    nav.toc li { text-align:left; }
+    table li { text-align:left; }
   </style>
 </head>
 <body>
