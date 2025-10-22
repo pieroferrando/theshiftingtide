@@ -1,0 +1,26 @@
+name: Update Substack Feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */8 * * *"  # every 8 hours
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: python3 scripts/build_feed.py
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain posts.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add posts.json
+            git commit -m "chore: update posts.json"
+            git push
+          else
+            echo "No changes."
+          fi
