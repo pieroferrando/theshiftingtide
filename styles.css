@@ -11,10 +11,7 @@
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
-body{
-  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
-  line-height:1.6;
-}
+body{font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif; line-height:1.6}
 
 /* Layout container */
 .wrap{max-width:1100px;margin:0 auto;padding:1.2rem}
@@ -28,31 +25,16 @@ body{
 }
 .header-row{
   display:grid;
-  grid-template-columns: 1fr auto; /* brand+nav on the left column, logo on the right */
+  grid-template-columns: 1fr auto auto;
   gap:1rem; align-items:center;
 }
-
-.brand-block{
-  display:flex; flex-direction:column; gap:.35rem;
-}
-
-.brand{
-  margin:0;
-  font-size:1.35rem;      /* slightly smaller than before */
-  letter-spacing:.2px;
-  font-weight:700;
-}
-
-.nav{
-  display:flex; gap:1rem; align-items:center; flex-wrap:wrap;
-}
-.nav-under{ margin-top:.1rem; } /* space below title */
+.brand{margin:0;font-size:1.6rem; letter-spacing:.2px}
+.nav{display:flex; gap:1rem; align-items:center; justify-content:flex-end}
 .nav-link{
   color:var(--fg); text-decoration:none; opacity:.85;
   font-weight:500;
 }
 .nav-link:hover{color:var(--accent); opacity:1}
-
 .logo{
   height:40px; width:auto; object-fit:contain;
   justify-self:end;
@@ -61,9 +43,9 @@ body{
 /* --------- Intro --------- */
 .intro{padding:2rem 0 1.2rem}
 .tagline{
-  margin:0 0 .4rem 0;
-  font-weight:400; /* not bold */
-  font-size: clamp(1.1rem, 2.1vw, 1.45rem); /* smaller headline */
+  margin:0 0 .6rem 0;
+  font-weight:400;
+  font-size: clamp(1.1rem, 2.1vw, 1.45rem);
 }
 .subtitle{
   margin:.2rem 0 0 0;
@@ -108,7 +90,9 @@ body{
 .btn-archive{
   background:var(--accent); color:#ffffff;
 }
-.btn-archive:hover{ filter:brightness(1.05); }
+.btn-archive:hover{
+  filter:brightness(1.05);
+}
 
 /* --------- Footer --------- */
 .site-footer{
@@ -121,5 +105,6 @@ body{
 
 /* --------- Responsive tweaks --------- */
 @media (max-width:720px){
+  .header-row{ grid-template-columns: 1fr auto; }
   .logo{ display:none; } /* hide logo on small screens for space */
 }
