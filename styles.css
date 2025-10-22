@@ -28,7 +28,7 @@ body{font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif; line-hei
   grid-template-columns: 1fr auto auto;
   gap:1rem; align-items:center;
 }
-.brand{margin:0;font-size:1.6rem; letter-spacing:.2px}
+.brand{margin:0;font-size:1.4rem; letter-spacing:.2px}
 .nav{display:flex; gap:1rem; align-items:center; justify-content:flex-end}
 .nav-link{
   color:var(--fg); text-decoration:none; opacity:.85;
@@ -45,7 +45,7 @@ body{font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif; line-hei
 .tagline{
   margin:0 0 .6rem 0;
   font-weight:400;
-  font-size: clamp(1.1rem, 2.1vw, 1.45rem);
+  font-size: clamp(1.1rem, 2.1vw, 1.4rem);
 }
 .subtitle{
   margin:.2rem 0 0 0;
