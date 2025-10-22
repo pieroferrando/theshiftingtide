@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+import json, re, datetime
+from urllib.request import urlopen
+from xml.etree import ElementTree as ET
+
+FEED_URL = "https://theshiftingtide.substack.com/feed"
+MAX_POSTS = 12
+NS = {'content':'http://purl.org/rss/1.0/modules/content/','media':'http://search.yahoo.com/mrss/'}
+
+def first_image(html):
+    m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', html or "", flags=re.I)
+    return m.group(1) if m else None
+
+def strip_html(html):
+    t = re.sub(r'<[^>]+>', ' ', html or '')
+    return re.sub(r'\s+', ' ', t).strip()
+
+raw = urlopen(FEED_URL, timeout=30).read()
+root = ET.fromstring(raw)
+items = root.find('channel').findall('item')
+
+out=[]
+for it in items[:MAX_POSTS]:
+    title = (it.findtext('title') or '').strip()
+    link  = (it.findtext('link') or '').strip()
+    pub   = (it.findtext('pubDate') or '').strip()
+    html  = it.findtext('content:encoded', namespaces=NS) or ''
+    desc  = it.findtext('description') or ''
+    sub   = strip_html(desc or html)
+    if len(sub) > 220: sub = sub[:217].rstrip() + '…'
+    media = it.find('media:content', namespaces=NS)
+    img   = media.get('url') if (media is not None and media.get('url')) else first_image(html or desc)
+    try:
+        dt = datetime.datetime.strptime(pub, "%a, %d %b %Y %H:%M:%S %z").astimezone(datetime.timezone.utc)
+        iso = dt.isoformat()
+    except Exception:
+        iso = datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc).isoformat()
+    out.append({"title":title,"subtitle":sub,"date":iso,"url":link,"image":img})
+
+with open("posts.json","w",encoding="utf-8") as f:
+    json.dump(out,f,ensure_ascii=False,indent=2)

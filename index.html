@@ -1,363 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Shifting Tide</title>
-  <meta name="description" content="The Shifting Tide - Safeguarding Capital in an Era of Systemic Shifts" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <style>
-    :root{ --bg:#ffffff; --fg:#000000; --muted:#444; --rule:#e6e6e6; --maxw:860px; }
-    html { scroll-behavior: smooth; }
-    body { margin:0; background:var(--bg); color:var(--fg); font-family:"Palatino Linotype", Palatino, "URW Palladio L", serif; line-height:1.65; }
-    .wrap { max-width:var(--maxw); margin:0 auto; padding:40px 18px 72px; }
-    header { text-align:center; }
-    h1{ margin:0 0 8px; font-size:clamp(28px,3.5vw,42px); line-height:1.2; font-weight:700; }
-    .sub{ color:var(--muted); margin:0 0 12px; text-align:center; }
-    .date, .author { color:var(--muted); margin:4px 0; text-align:center; }
-    p, li { font-size:1.06rem; text-align:justify; }
-    h2{ margin:2rem 0 .25rem; font-size:clamp(22px,2.4vw,30px); line-height:1.3; font-weight:700; }
-    .subhead{ font-size:1.2rem; font-style:italic; margin:-.2rem 0 1.0rem; text-align:left; }
-    hr.sep{ border:0; border-top:1px solid var(--rule); margin:28px 0; }
-    nav.toc{ border:1px solid var(--rule); border-radius:10px; padding:14px 16px; background:#fafafa; text-align:left; }
-    nav.toc h3{ margin:0 0 8px; font-size:1rem; letter-spacing:.02em; }
-    nav.toc ol{margin: 0; padding-left: 0; list-style: none; }
-    nav.toc a{ color:inherit; text-decoration:none; }
-    nav.toc a:hover{ text-decoration:underline; }
-    a { color:#000; }
-    a:visited { color:#000; }
-    a:hover, a:focus { text-decoration: underline; }
-    figure{ margin:1.1rem 0; }
-    figure img{ width:100%; height:auto; border-radius:10px; display:block; cursor:zoom-in; }
-    figure.single{ max-width:var(--maxw); margin:1.1rem auto; }
-    figcaption{ font-size:.95rem; color:#333; margin-top:.35rem; }
-    figcaption .src{ display:block; color:#666; font-size:.9rem; margin-top:.15rem; }
-    table{ width:100%; border-collapse:collapse; margin:1rem 0; }
-    th, td{ padding:6px 4px; text-align:left; vertical-align:top; }
-    thead th{ border-bottom:1px solid var(--rule); }
-    ul.tight{ margin:.2rem 0 .8rem 1.1rem; }
-    /* Lightbox */
-    dialog#zoomDlg{ border:0; padding:0; background:transparent; }
-    .backdrop{ position:fixed; inset:0; background:rgba(0,0,0,.75); display:grid; place-items:center; }
-    .backdrop img{ max-width:min(92vw,1400px); max-height:92vh; box-shadow:0 10px 40px rgba(0,0,0,.6); border-radius:12px; cursor:zoom-out; background:#fff; }
-      .fig-pair{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:1rem 0; }
-
-    /* --- Left-align all list items (TOC, bullets, ordered lists, lists in tables) --- */
-    li { text-align:left; }
-    nav.toc li { text-align:left; }
-    table li { text-align:left; }
-  </style>
+  <meta name="description" content="Essays on history, money, and the shifting world order." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>The Shifting Tide</h1>
-      <p class="sub">Safeguarding Capital in an Era of Systemic Shifts</p>
-      <p class="date"><em>Piero Ferrando - September 2025</em></p>
-      <!-- Download button added below the name -->
-      <p>
-        <a href="The%20Shifting%20Tide%20-%20PDF.pdf" download
-           style="display:inline-block;padding:10px 16px;border:1px solid var(--fg);border-radius:10px;text-decoration:none;font-weight:600;line-height:1;margin-top:8px;">
-          Download PDF
-        </a>
-      </p>
-    </header>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="brand">The Shifting Tide</h1>
+      <nav class="nav">
+        <a class="nav-link" href="/main-article/" aria-label="Read the Main Article">Main Article</a>
+        <a class="nav-link" href="https://theshiftingtide.substack.com/" target="_blank" rel="noopener">Substack</a>
+      </nav>
+    </div>
+  </header>
 
-    <section id="front-blurbs" aria-label="Front matter">
-      <h4>The Shifting Tide</h4>
-      <p>At some point over the past half century, the West, led by the United States, crossed its Rubicon. Debt, dysfunction, and division ceased to be temporary bugs and hardened into structural features of the system. The era of effortless promises and unquestioned stability has given way to something different: a drift into a new order. History shows that civilizations adapt, and new systems eventually emerge. But these transitions are rarely smooth. They are disruptive and are often marked by a redistribution of power and capital.</p>
-      <p>While the exact shape or timing of the next order cannot be known, the trajectory is clear: what matters now is how one endures <em>the shifting tide</em>.</p>
-
-      <h4>Why Read This Paper</h4>
-      <p>Today’s situation in the West is akin to frogs in a pot of water, slowly brought to boil. The temperature rises, yet nobody acts any differently, until eventually the frogs boil to death. If you are reading this and have a similar feeling of the rising temperature, but don’t quite understand <em>why</em> the temperature is rising, or more importantly, <em>how</em> to protect yourself from it, this paper is for you. The aim is to cut through the noise, provide a long-term perspective, and offer a blueprint for preserving wealth.</p>
-
-      <h4>Note From the Author</h4>
-      <p>After beginning my career on Wall Street, I had a visceral feeling that something was fundamentally broken in how our system operates. Rather than just march along and ignore the feeling, I chose to take a step back and educate myself on the deeper forces at play, and how they will shape my life, my family’s future, and the decades ahead. This paper is my attempt to distill those lessons and outline my thesis on how to protect wealth through what I believe will be radically different times ahead.</p>
+  <main class="wrap">
+    <section class="intro">
+      <h2 class="tagline">Essays on history, money, and the shifting world order.</h2>
     </section>
 
-    <nav class="toc" aria-label="Table of Contents">
-      <h3>Table of Contents</h3>
-      <ol>
-        <li><a href="#prologue">I. Prologue</a> - <span style="font-style:italic;">Lessons from Livy: Rome in the 90s BCE</span></li>
-        <li><a href="#infection">II. The Infection</a> - <span style="font-style:italic;">Easy Money: The Great Drug</span></li>
-        <li><a href="#symptoms">III. The Symptoms</a> - <span style="font-style:italic;">Gradually Then Suddenly: The Silent Crisis in the West</span></li>
-        <li><a href="#convulsions">IV. The Convulsions</a> - <span style="font-style:italic;">1975 vs. 2025 vs. 2075: Where We Are Headed</span></li>
-        <li><a href="#antidote">V. The Antidote</a> - <span style="font-style:italic;">Back to the Future: Anchoring on Permanence</span></li>
-        <li><a href="#conclusion">VI. Concluding Remarks</a> - <span style="font-style:italic;">All Things Must Pass</span></li>
-      </ol>
-    </nav>
+    <section id="posts" class="grid" aria-live="polite"></section>
 
-    <hr class="sep" />
-
-    <section id="prologue">
-      <h2>I. Prologue</h2>
-      <p class="subhead"><em>Lessons from Livy: Rome in the 90s BCE</em></p>
-      <p>In the last days of the Roman Republic, the world’s mightiest state trembled under the weight of its own contradictions. Rome, rich from conquest and swollen with power, found its foundations rotting. Its allies, long denied citizenship, rose in rebellion. Economic inequality deepened, the poor seethed with resentment, and populist demagogues promised power to the masses while eroding the very institutions that bound the Republic together. The Senate, once the Republic’s anchor, bent and broke as norms dissolved and civil war consumed the land.</p>
-      <p>To a patrician of that age (c. 91 BCE), the future must have seemed uncertain but survivable, until it was not. Within decades, Rome saw proscriptions that stripped the wealthy of their fortunes and their lives, a radical reshaping of ownership, and a relentless parade of civil strife. What began as political unrest became revolution and civil war, and within a century the Republic gave way to empire. And while Augustus’ reign ultimately ushered in the <em>Pax Romana</em>, this flourishing came only after a century of chaos and destruction.</p>
-      <p><em>Historia non facit saltum</em> - history does not make leaps. Systemic shifts are rarely clear to those living through them. Instead, they unfold gradually, as institutions decay in slow motion, until one day the world simply no longer resembles what it once was.</p>
-      <p>Today, the West stands at a familiar precipice. Sovereign debts swell, currencies erode, demographics age, and social fissures widen. Rome was pre-industrial and agrarian; ours is global and technology driven. History doesn’t repeat, but the patterns rhyme. The long postwar peace, once taken for granted, feels ever more ephemeral. The outcome isn’t fated; it is path-dependent, but the pressures are set in motion.</p>
+    <section class="more">
+      <a class="btn" href="https://theshiftingtide.substack.com/archive" target="_blank" rel="noopener">
+        Browse the full archive →
+      </a>
     </section>
+  </main>
 
-    <hr class="sep" />
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© <span id="year"></span> The Shifting Tide</small>
+    </div>
+  </footer>
 
-    <section id="infection">
-      <h2>II. The Infection</h2>
-      <p class="subhead"><em>Easy Money: The Great Drug</em></p>
-      <p>There are countless reasons behind the rise and fall of empires, many of which have been covered in detail over millennia by greater minds and are beyond the scope of this paper. For financial markets, our focus, there is one reason in particular which stands out: <strong>easy money</strong>.</p>
-      <p>Since 1945, the US dollar has underpinned global trade and finance, allowing America and its allies to:</p>
-      <ul class="tight">
-        <li>Borrow internationally in local currency</li>
-        <li>Import goods and capital while exporting inflation</li>
-        <li>Finance wars and deficits without balanced budgets</li>
-        <li>Project power through sanctions and control of global payments</li>
-      </ul>
-      <p>For eight decades, the United States and its allies have lived beyond their means, sinking ever deeper into debt. What most do not understand is that the bill <em>never</em> comes due as a monthly statement, but rather in more corrosive forms: rising inflation, eroding trust, stagnating productivity, and the gradual destruction of the very currency that enabled the excess in the first place. Eventually, debt is paid back by issuing still <em>more</em> debt, an endless cycle of money creation, until one day, the house of cards collapses.</p>
-      <p>The graph below shows how this process has been unfolding over one hundred years in the United States, although a very similar dynamic has been playing out across all Western nations. Each time the system strains to its breaking point, the rules are rewritten, money is printed, and the nation buys itself another day - postponing, but never resolving, the underlying fragility.</p>
-      <figure class="single"><img src="figure1.png" alt="Figure 1" data-zoom /></figure>
-      <p><strong>So, why does this matter now?</strong></p>
-      <p>It matters because the <em>easy</em> levers to keep the game going have already been pulled: (i) devalue the currency’s peg to gold (1933), (ii) abandon the gold standard entirely (1971), (iii) cut interest rates to zero (2008), and (iv) print money through quantitative easing, i.e. borrowing money from yourself (2020).</p>
-      <p>As the chart below shows, these <em>easy money</em> levers have pushed the developed world back to debt levels not seen since the World War era. And although easy money has allowed for decades of rising living standards, booming asset prices, and abundant credit, the underlying costs have steadily piled up. Most troubling of all these easy levers have been used up, leaving the next generation staring into the abyss.</p>
-      <figure class="single"><img src="figure2.png" alt="Figure 2" data-zoom /></figure>
-      <p><strong>What remains are the hard levers</strong> - measures fundamentally at odds with the democratic system, because they demand visible sacrifices nobody wants to vote for. These levers involve (i) raising taxes, (ii) cutting spending, (iii) restructuring entitlements, or (iv) defaulting on debt. Each of these imposes direct costs on powerful constituencies: voters, retirees, investors, and creditors. Unlike <em>easy</em> levers, they cannot disguise the problem; they confront it head-on.</p>
-      <table>
-        <thead>
-          <tr><th>Easy Levers</th><th>Hard Levers</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <ul class="tight">
-                <li>Devalue the peg <em>(exhausted)</em></li>
-                <li>Abandon the gold standard <em>(exhausted)</em></li>
-                <li>Lower interest rates to zero <em>(exhausted)</em></li>
-                <li>Quantitative easing <em>(ongoing)</em></li>
-              </ul>
-            </td>
-            <td>
-              <ul class="tight">
-                <li>Raise taxes</li>
-                <li>Cut spending</li>
-                <li>Restructure entitlements</li>
-                <li>Default on debt</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <hr class="sep" />
-
-    <section id="symptoms">
-      <h2>III. The Symptoms</h2>
-      <p class="subhead"><em>Gradually Then Suddenly: The Silent Crisis in the West</em></p>
-      <p>The effects of <em>easy money</em> are not immediately visible, but they take root like hidden tumors, quietly growing until the system can no longer contain the cancer and it reaches its inevitable terminus.</p>
-      <p>Reliance on <em>easy money</em> sets off reflexive, self-reinforcing negative feedback loops that feed on one another:</p>
-      <ul class="tight">
-        <li><strong>The debt burden grows</strong>, until debt service payments begin to crowd out essential spending</li>
-        <li><strong>Creditors lose confidence in repayment</strong>, making it harder to borrow and driving up interest costs</li>
-        <li><strong>Easy money concentrates in the hands of few</strong>, fracturing the social fabric and deepening division</li>
-        <li><strong>The system weakens</strong>, leaving society fragile internally and vulnerable to external threats</li>
-      </ul>
-      <p>Below are several key indicators of these underlying distortions. While much of the data centers on the United States given its gravitational force, the symptoms are increasingly evident across the Western world.</p>
-
-      <h3>America’s fiscal position has decayed to unimaginable levels</h3>
-      <p>Imagine if your mortgage payments were 100% of your income: you would literally have to <em>borrow money</em> just to cover your payments. That unthinkable situation is exactly where the United States now finds itself. Federal debt now exceeds $37 trillion, more than five times its level two decades ago. Annual debt service (interest + principal repayments) already consumes nearly all government revenue and is projected to reach ~150% within the next 15 years. This burden is rapidly crowding out other priorities, with net interest alone already absorbing 21% of federal revenue.</p>
-      <div class="fig-pair">
-  <figure><img src="figure3.png" alt="Figure 3" data-zoom /></figure>
-  <figure><img src="figure4.png" alt="Figure 4" data-zoom /></figure>
-</div>
-
-      <h3>This is a global trend. Debt burdens are set to rise across Western nations in the coming decades</h3>
-      <p>Across the G7, debt burdens are on track to continue growing. Japan, which we will explore in more detail later in this paper, has been experiencing a debt crisis for 35 years, while Italy, France, Canada, and the UK are flying too close to the sun. Only Germany is forecast to see its debt ratio fall, reflecting a more disciplined fiscal path. The strain of mounting debt is pressuring developed economies worldwide.</p>
-      <figure class="single"><img src="figure5.png" alt="Figure 5" data-zoom /></figure>
-
-      <h3>The bond market is becoming concerned. Long-term sovereign yields have repriced sharply higher</h3>
-      <p>Despite recent aggressive rate cuts by central banks, long-term yields continue to rise. In the US, the 10-year Treasury yield has climbed from ~0.5% in mid-2020 to ~4.5% in 2025, even as the Fed has cut its policy rate back. In Japan, 10-year JGB yields recently reached 1.6%, the highest in 20 years, despite the BOJ’s ongoing interventions. Investors are demanding higher compensation to hold sovereign debt.</p>
-      <figure class="single"><img src="figure6.png" alt="Figure 6" data-zoom /></figure>
-
-      <h3>Official reserves are rotating out of Treasuries and into gold; de-dollarization pressure is visible</h3>
-      <p>Foreign central banks, particularly in Russia, India, and China, are reducing their reliance on US Treasuries and increasing gold holdings. In 2022, gold surpassed Treasuries as the leading reserve asset on global central bank balance sheets for the first time in three decades, a quiet but decisive signal of waning confidence in Western fiscal stability.</p>
-      <div class="fig-pair">
-  <figure><img src="figure7.png" alt="Figure 7" data-zoom /></figure>
-  <figure><img src="figure8.png" alt="Figure 8" data-zoom /></figure>
-</div>
-
-      <h3>Decades of easy money have deepened inequality, fueled resentment, and inflamed politics</h3>
-      <p>Years of easy money have not revived broad prosperity; instead, they have inflated assets and concentrated wealth at the top. Inequality is reaching a boiling point. Housing costs have surged beyond wages, and executive compensation has exploded from 24x the average worker’s pay in 1970 to nearly 300x today. These gaps are not abstract, they feed anger, frustration, and the corrosive belief that the system is rigged.</p>
-      <div class="fig-pair">
-  <figure><img src="figure9.png" alt="Figure 9" data-zoom /></figure>
-  <figure><img src="figure10.png" alt="Figure 10" data-zoom /></figure>
-</div>
-
-      <h3>Optimism is collapsing across the developed world</h3>
-      <p>Across the developed world, optimism has faded: most no longer believe the next generation will be better off. Meanwhile, confidence in the future is growing across emerging markets. The contrast is telling, where prosperity has matured, hope has waned; where it is still being built, belief endures.</p>
-      <figure class="single"><img src="figure11.png" alt="Figure 11" data-zoom /></figure>
-
-      <h3>Falling fertility and rising immigration have deepened cultural divisions</h3>
-      <p>The collapse of affordability and optimism has reshaped demographics. Birth rates across the developed world have fallen below replacement, as younger generations hesitate to form families. To sustain their economies, high-income countries have turned instead to immigration. This has supplied labor but also inflamed politics, feeding populist movements and widening cultural divisions. What begins as an economic imbalance ripples into the social fabric, deepening the fractures of society.</p>
-      <div class="fig-pair">
-  <figure><img src="figure12.png" alt="Figure 12" data-zoom /></figure>
-  <figure><img src="figure13.png" alt="Figure 13" data-zoom /></figure>
-</div>
-
-      <h3>The renewed arms race: the risks are rising, and so are the costs</h3>
-      <p>Externally, the pressures are mounting. Global military spending has now surpassed Cold War highs, with Western governments printing money to rebuild their arsenals even as debt levels strain public finances. As countries turn more isolationist and multilateralism recedes, defense outlays are likely to keep rising, financed by yet more borrowing and reinforcing the negative feedback loop.</p>
-      <figure class="single"><img src="figure14.png" alt="Figure 14" data-zoom /></figure>
-    </section>
-
-    <hr class="sep" />
-
-    <section id="convulsions">
-      <h2>IV. The Convulsions</h2>
-      <p class="subhead"><em>1975 vs. 2025 vs. 2075: Where We Are Headed</em></p>
-      <p>It is easy to analyze the past but far harder to look ahead. The fifty years from 1975 to 2025 appear clear in hindsight, yet envisioning the world of 2075 feels almost impossible.</p>
-      <p>To make the attempt, let us review why certain asset classes performed they way they did over the past half century and subsequently draw on historical case studies to understand what may lie ahead.</p>
-
-      <h3>1975 to 2025: The Debt Supercycle</h3>
-      <p>As we have seen, in 1971, President Richard Nixon announced that the United States would abandon the gold standard. In effect, the US defaulted on its obligation to repay debt in hard currency and ushered in the modern era of fiat money. From that point on, the United States, followed by other central banks such as the Bank of Canada, the Bank of Japan, and later the European Central Bank, relied on interest rates, quantitative easing, and debt monetization ("<em>printing money</em>") to sustain growth.</p>
-      <p><p>This unfolded in three phases:</p>
-<ol type="a">
-  <li>A long decline in interest rates from 1981 until they hit zero in 2008, which led to</li>
-  <li>The era of quantitative easing from 2008 to 2020, which led to</li>
-  <li>The debt monetization era from 2020 to today, marked by ever-larger fiscal deficits financed directly by central bank money creation</li>
-</ol>
-      <figure class="single"><img src="figure15.png" alt="Figure 15" data-zoom /></figure>
-      <p>This constant injection of liquidity and credit in the system resulted in a <strong>BOOM</strong> for assets which are valued primarily through discounted cash flow analysis rather than supply demand analysis. Assets that generate cash flows (stocks, bonds, private equity, venture capital, and real estate) exploded as lower discount rates made their future earnings and coupons more valuable, compounding wealth over decades.</p>
-      <p>By contrast, store-of-value assets such as gold and commodities, which do not produce cash flows, only shone in episodes of inflation, deficit spending, or currency debasement. For most of the era, when inflation was muted and real yields were positive, they languished, serving more as insurance than growth engines.</p>
-      <figure class="single"><img src="figure16.png" alt="Figure 16" data-zoom /></figure>
-      <p>That isn’t to say the fifty-year period was uniform. Along the way came recessions and crises: the early 1980s inflation shock, the savings and loan collapse, the dot-com bust, the global financial crisis, and the pandemic. Gold outperformed in the 1970s, 2000s, and 2010s during these inflationary or destabilizing episodes, when the dollar weakened and policy turned expansionary.</p>
-      <p>Yet overall, governments’ ability to deploy easy money and sweep losses under the rug meant the party was able to continue. Each crisis was met with lower rates, larger deficits, and more money printing turning potential reckonings into new booms. Stability was preserved in the short run, but at the cost of deeper long-term fragilities.</p>
-
-      <h3>2025 to 2075: The Great Deleveraging</h3>
-      <p>History offers thousands of examples of unsustainable fiscal and monetary policies destroying nations and the lives of their citizens. Yet many in the developed world still assume that either (a) crises seen in so-called "underdeveloped" nations such as Argentina, Turkey, Peru, Zimbabwe, Nigeria, Lebanon, or Venezuela could never happen in the West, or (b) older episodes in Rome, Byzantium, the Song Dynasty, or Imperial Spain are irrelevant relics of the past and that "this time is different."</p>
-      <p>To challenge that assumption, let us examine a case study that is both recent and drawn from one of the most advanced nations of its time: Japan. A country that, at its peak, was the world’s second-largest economy, a global leader in technology and innovation, and a symbol of hypergrowth where stagnation seemed unimaginable.</p>
-
-      <h4><em>The Japanese Case</em></h4>
-      <p>After its devastation in World War II, Japan rebuilt with remarkable speed, supported by US aid, industrial policy, and an export-driven growth model. By the 1980s it had become the world’s second-largest economy, powered by high savings, disciplined labor, and close coordination between government and industry. Yet this growth was built on ever-increasing leverage, which the private sector pushed to excess.</p>
-      <figure class="single"><img src="figure17.png" alt="Figure 17" data-zoom /></figure>
-      <p>In the late 1980s, liberalization and easy money fueled one of the largest asset bubbles in history. Equity and property prices soared as leverage surged across households and corporations. When the bubble burst in 1989/90, banks were left with massive bad loans, growth stagnated, and deflation set in. The Bank of Japan cut rates and later pioneered quantitative easing, or "<em>money printing</em>".</p>
-      <p>Unlike in the United States after 2008, these policies failed to revive growth. Japan’s private sector was already over-leveraged, banks were paralyzed by non-performing loans, and the BOJ’s response was hesitant. By contrast, US authorities moved quickly after 2008, recapitalizing banks, socializing losses, and launching QE at scale. Confidence in the dollar and deep capital markets meant liquidity flowed back into equities, real estate, and bonds. This is not to say the Japanese case could not happen in the US, only that in 2008, swift action and global trust in the dollar meant America got lucky.</p>
-      <p>In Japan, <em>easy money</em> fell into a broken banking system and a debt-saturated, aging economy. Equity markets took thirty-five years to recover their 1989 highs, property prices never fully bounced back, but most importantly, <strong>the value of the yen collapsed</strong>. For global investors, even modest gains in yen terms across asset classes vanished when measured against gold, dollars, or other commodities.</p>
-      <figure class="single"><img src="figure18.png" alt="Figure 18" data-zoom /></figure>
-      <figure class="single"><img src="figure19.png" alt="Figure 19" data-zoom /></figure>
-      <p>Japan’s monetary experiment continues today, with debt-to-GDP already at 250% and heading toward 300%. Three decades of zero interest rates have kept default at bay, but at the cost of the destruction of the yen, stagnant growth, and a slow erosion of its former strength. Sooner or later, bonds will reprice and yields will surge: an outright default can no longer be ruled out.</p>
-      <figure class="single"><img src="figure20.png" alt="Figure 20" data-zoom /></figure>
-      <p>The biggest tragedy is that of the average Japanese citizen. Wages have barely moved in decades, purchasing power has eroded, and GDP per capita has steadily slipped behind that of peer nations. While America and Europe rode waves of financial expansion and asset booms during the past 35 years, Japan grew poorer by comparison, trapped in a cycle of zero growth and a weakening currency. The lost decades were not just a financial markets story, they reshaped the daily lives and prospects of an entire generation.</p>
-      <figure class="single"><img src="figure21.png" alt="Figure 21" data-zoom /></figure>
-      
-      <h3>So, When Exactly Does the Tide Shift?</h3>
-      <p>Trying to call the exact moment is a trap. Big turns rarely announce themselves; they show up as a sequence of small tells. To keep track of these tells, think of a simple dashboard you can explain at the dinner table:</p>
-      <ul class="tight">
-        <li>Are governments still spending far more than they take in?</li>
-        <li>Are prices rising faster than paychecks?</li>
-        <li>Are long-term borrowing costs jumping or calming?</li>
-        <li>Are central banks adding support or stepping back?</li>
-        <li>Are most businesses earning solid cash, or is it a few flashy names?</li>
-      </ul>
-      <p>If fragility builds, the next few years may look like the following:</p>
-      <ul class="tight">
-        <li><strong>Growing fragility (2025 to 2030):</strong> Deficits persist, growth is mediocre, and nothing snaps outright. Interest costs rise faster than revenues; policy rates hover near zero in real terms; credit is tight but not broken; profits narrow to fewer winners.</li>
-        <li><strong>Funding shock (2030 to 2040):</strong> Another debt-fed boom takes hold in the private sector (real estate, tech, or elsewhere). Then something shifts: rates jump, liquidity tightens, and losses pile up. The strain reaches the government: revenues weaken, support spending rises, interest bills reset higher. Central banks reopen the faucets and expand balance sheets, but unlike 2008, they also face massive losses on their existing holdings. To stabilize the system, they print even more money to cover their own losses. At this point, foreign investors lose confidence and the currency depreciates sharply.</li>
-      </ul>
-      <p>It is worth noting that an optimistic scenario could transpire instead. It may involve: (i) a genuine productivity boom (AI, energy, and critical infrastructure), (ii) political consensus that confronts structural deficits, and/or (iii) an exogenous, unpredictable shock that resets expectations in ways we can’t yet model.</p>
-      <p>While a surprise improvement outcome would be welcome, my view is that it is best to anchor on the facts of today. History is unkind to strategies built on wishful thinking.</p>
-    </section>
-
-    <hr class="sep" />
-
-    <section id="antidote">
-      <h2>V. The Antidote</h2>
-      <p class="subhead"><em>Back to the Future: Anchoring on Permanence</em></p>
-      <p><em>Past performance does not guarantee future results</em>. Is this not what is engraved on every investment memo of every financial manager everywhere in the world? If so, then why do people continue to assume the future will look like a slightly modified version of the present?</p>
-      <p>If the last fifty years were <em>The Debt Supercycle</em>, the next fifty may very well be <em>The Great Deleveraging</em>. The accumulated liabilities of the past era cannot be sustained forever. What was once a tailwind will become a headwind: the very scale of the debt now constrains growth, investment, and political stability.</p>
-      <p>Compounding the problem, extreme polarizations at home and abroad threaten to accelerate the strain: domestically through the inability to agree on anything, let alone the deficit, and internationally through increasing militarization and conflict, all of which will feed ever greater debt.</p>
-      <p>As we have seen, deleveraging can occur in only three ways:</p>
-      <ul class="tight">
-        <li><strong>Through repayment</strong> (either grow out of your debts or face austerity and stagnation)</li>
-        <li><strong>Through default</strong> (credit destruction and restructuring)</li>
-        <li><strong>Through debasement</strong> (printing money, inflation and currency devaluation)</li>
-      </ul>
-      <p>History suggests all three will play a role, but ultimately, <strong>governments almost always choose to print money and devalue the currency</strong>. It is politically easier to quietly erode purchasing power than to impose explicit austerity or defaults. From Weimar Germany in the 1920s, to Britain inflating away its postwar debt, to the Japanese case we explored, the lesson repeats: the printing press becomes the final recourse.</p>
-      <p><em>I know that I know nothing.</em> Let me be clear: I do not know exactly when the tide will shift. But after examining the symptoms and case studies we have explored, I believe there is an exceptionally high probability that within the next 20 years, if not sooner, the US dollar, and allied currencies such as the euro and the pound, will face a debt crisis met with enormous money printing, which will have a radical impact on the markets.</p>
-      
-      <p>In such a scenario, deep value endures while speculation fails. Productive, cash-flowing assets with scarcity and resilience tend to preserve wealth, while leveraged bets and hollow promises are exposed:</p>
-      <h3>Survivors:</h3>
-      <ul class="tight">
-        <li><strong>Hard Assets:</strong> Supply-constrained commodities with internationally recognized value<br>o <em>e.g. gold, silver, energy reserves</em></li>
-        <li><strong>Trophy Assets:</strong> Irreplaceable land and strategically located real estate with little or no debt<br>o <em>e.g. productive farmland, landmark inter-historical properties</em></li>
-        <li><strong>Local Productive Assets:</strong> Businesses with strong balance sheets, pricing power, and real output<br>o <em>e.g. cash-rich monopolies, infrastructure providers, agriculture, critical technology</em></li>
-        <li><strong>Strong Foreign Currencies:</strong> Issued by nations with low debt and limited money printing<br>o <em>e.g. Swiss franc, Singapore dollar, Norwegian krone</em></li>
-        <li><strong>Productive Foreign Assets:</strong> Businesses in economies with low debt and strong real growth<br>o <em>e.g. India, Southeast Asia, Gulf States</em></li>
-        <li><strong>Alternative Stores of Value:</strong> Outside sovereign control, increasingly digital<br>o <em>e.g. Bitcoin</em></li>
-      </ul>
-      <h3>Casualties:</h3>
-      <ul class="tight">
-        <li><strong>Local Cash & Savings:</strong> Nominally safe but persistently eroded by inflation<br>o <em>e.g. checking accounts, savings deposits</em></li>
-        <li><strong>Fixed-Rate Bonds:</strong> Locked into depreciating currency streams unless tied to inflation<br>o <em>e.g. long-term Treasuries, corporate bonds</em></li>
-        <li><strong>Speculative Assets:</strong> Dependent on multiple expansion without structural moats<br>o <em>e.g. unprofitable tech stocks, commodity real estate without scarcity</em></li>
-        <li><strong>Overleveraged Holdings:</strong> Reliant on cheap financing, vulnerable in a world of tighter capital<br>o <em>e.g. highly leveraged property, debt-laden corporations</em></li>
-        <li><strong>Entitlement-Dependent Securities:</strong> Exposed to underfunded promises and fiscal strain<br>o <em>e.g. pension obligations, social security-linked instruments</em></li>
-        <li><strong>Currency-Pegged Assets:</strong> Tied to regimes that may break under pressure<br>o <em>e.g. emerging market bonds pegged to the dollar, weak-currency sovereign debt</em></li>
-      </ul>
-      <p><p>It is worth noting that if the deleveraging becomes severe, governments may grow desperate and resort to:</p>
-<ol type="i">
-  <li><strong>Capital controls:</strong> restrictions on moving money abroad, withdrawal limits, forced currency conversions, or requirements to hold government debt</li>
-  <li><strong>Draconian taxation:</strong> sharp increases in wealth, inheritance, income, property, or windfall taxes or retroactive levies designed to plug deficits</li>
-  <li><strong>Asset seizures:</strong> forced nationalization of industries, appropriation of savings and pensions, compulsory purchases of private assets at below-market prices, or outright confiscation</li>
-</ol>
-      <p>Although these measures may seem extreme, one would be wise to keep them in mind. History shows that rules can change almost overnight, often through emergency decrees, legislation rushed in under the guise of crisis management, or policies justified as temporary but that linger for decades. In such an environment, <em>liquidity becomes paramount</em>, offering flexibility to adapt when others are trapped in illiquid assets.</p>
-      <p>The rise of debt and speculation is gradual and subtle, but the unwind is brutal. Confidence vanishes, capital flees, and markets built over decades can collapse in weeks.</p>
-    </section>
-
-    <hr class="sep" />
-
-    <section id="conclusion">
-      <h2>VI. Concluding Remarks</h2>
-      <p class="subhead"><em>All Things Must Pass</em></p>
-      <p>Nothing lasts forever, and that is as it should be. Just as the sun rises and sets, so too do systems.</p>
-      <p>It is worth acknowledging that the current party may continue for some time. Equity markets can still rise as liquidity and credit fuel speculation, and bubbles often swell to their greatest size just before they burst. The challenge is not predicting when the tide turns, but preparing so that when it does, you are not exposed.</p>
-      <p>My hope is that this paper provides both perspective and a framework to navigate what lies ahead. The goal is not only to protect wealth but, where possible, to position yourself to potentially capitalize on the transition. History shows that fortunes have always been made in moments of great change, not by those who waited until the last moment, but by those who recognized the signs early and acted with discipline.</p>
-      <p>Thank you for your time, and I hope this equips you to face <em>the shifting tide</em> with clarity and resolve.</p>
-      <p><em>Piero Ferrando - September 2025</em></p>
-
-      <h3>Further Readings</h3>
-      <p>For those interested in exploring these themes more deeply, I have included a selection of modern and classical works that have shaped my own perspective:</p>
-      <ul class="tight">
-        <li><em>The Republic</em> - Plato (c. 375 BCE)</li>
-        <li><em>The Decline and Fall of the Roman Empire</em> - Edward Gibbon (1776–1789)</li>
-        <li><em>The Story of Civilization</em> - Will & Ariel Durant (1935–1975)</li>
-        <li><em>The Road to Serfdom</em> - F. A. Hayek (1944)</li>
-        <li><em>The Lessons of History</em> - Will & Ariel Durant (1968)</li>
-        <li><em>The Embarrassment of Riches: An Interpretation of Dutch Culture in the Golden Age</em> - Simon Schama (1987)</li>
-        <li><em>The Rise and Fall of the Great Powers</em> - Paul Kennedy (1987)</li>
-        <li><em>The Ascent of Money</em> - Niall Ferguson (2008)</li>
-        <li><em>This Time Is Different: Eight Centuries of Financial Folly</em> - Carmen Reinhart & Kenneth Rogoff (2009)</li>
-        <li><em>Antifragile: Things That Gain from Disorder</em> - Nassim Nicholas Taleb (2012)</li>
-        <li><em>The Changing World Order: Why Nations Succeed and Fail</em> - Ray Dalio (2021)</li>
-        <li><em>The Avoidable War</em> - Kevin Rudd (2022)</li>
-        <li><em>How Countries Go Broke</em> - Ray Dalio (2025)</li>
-      </ul>
-    </section>
-  </div>
-
-  <dialog id="zoomDlg"></dialog>
   <script>
-    const dlg = document.getElementById('zoomDlg');
-    addEventListener('click', (e) => {
-      const img = e.target.closest('img[data-zoom]');
-      if (img){
-        const wrap = document.createElement('div');
-        wrap.className = 'backdrop';
-        const big = document.createElement('img');
-        big.src = img.currentSrc || img.src;
-        big.alt = img.alt || '';
-        wrap.appendChild(big);
-        wrap.addEventListener('click', () => dlg.close());
-        dlg.replaceChildren(wrap);
-        dlg.showModal();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    async function loadPosts(){
+      const el = document.getElementById('posts');
+      try{
+        const r = await fetch('/posts.json', { cache: 'no-store' });
+        if(!r.ok) throw new Error('posts.json not found');
+        const items = await r.json();
+        el.innerHTML = items.map(it => {
+          const date = new Date(it.date).toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+          const img = it.image ? `<img src="${it.image}" alt="" loading="lazy" class="card-img">` : '';
+          const sub = it.subtitle ? `<p class="card-sub">${it.subtitle}</p>` : '';
+          return `
+            <article class="card">
+              <a class="card-link" href="${it.url}" target="_blank" rel="noopener">
+                ${img}
+                <div class="card-body">
+                  <h3 class="card-title">${it.title}</h3>
+                  ${sub}
+                  <p class="card-meta">${date}</p>
+                </div>
+              </a>
+            </article>`;
+        }).join('');
+      }catch(e){
+        el.innerHTML = `<p class="error">Couldn’t load posts. <a href="https://theshiftingtide.substack.com/">See Substack</a>.</p>`;
+        console.error(e);
       }
-    });
+    }
+    loadPosts();
   </script>
 </body>
 </html>
