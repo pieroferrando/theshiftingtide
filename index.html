@@ -4,30 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Shifting Tide</title>
-  <meta name="description" content="Essays on history, money, and the shifting world order." />
+  <meta name="description" content="Lessons from history for a world in transition." />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-row">
       <h1 class="brand">The Shifting Tide</h1>
       <nav class="nav">
-        <a class="nav-link" href="/main-article/" aria-label="Read the Main Article">Main Article</a>
+        <a class="nav-link" href="/main-article/" aria-label="Read the main article">Main article</a>
         <a class="nav-link" href="https://theshiftingtide.substack.com/" target="_blank" rel="noopener">Substack</a>
       </nav>
+      <img class="logo" src="/pagelogo.png" alt="The Shifting Tide logo" />
     </div>
   </header>
 
   <main class="wrap">
     <section class="intro">
-      <h2 class="tagline">Essays on history, money, and the shifting world order.</h2>
+      <h2 class="tagline">Lessons from history for a world in transition</h2>
+      <p class="subtitle">
+        The Shifting Tide publishes short essays that bridge the past and present. Each piece reflects on a moment, figure,
+        or pattern in history, from forgotten kings to familiar revolutions, and explores how it rhymes uncannily with a current event.
+      </p>
     </section>
 
     <section id="posts" class="grid" aria-live="polite"></section>
 
     <section class="more">
-      <a class="btn" href="https://theshiftingtide.substack.com/archive" target="_blank" rel="noopener">
+      <a class="btn btn-archive" href="https://theshiftingtide.substack.com/archive" target="_blank" rel="noopener">
         Browse the full archive →
       </a>
     </section>
@@ -41,12 +46,19 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     async function loadPosts(){
       const el = document.getElementById('posts');
       try{
         const r = await fetch('/posts.json', { cache: 'no-store' });
         if(!r.ok) throw new Error('posts.json not found');
         const items = await r.json();
+
+        if (!Array.isArray(items) || items.length === 0) {
+          el.innerHTML = `<p class="empty">No posts found yet.</p>`;
+          return;
+        }
+
         el.innerHTML = items.map(it => {
           const date = new Date(it.date).toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
           const img = it.image ? `<img src="${it.image}" alt="" loading="lazy" class="card-img">` : '';
