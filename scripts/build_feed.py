@@ -12,7 +12,7 @@ from urllib.request import urlopen, Request
 from urllib.error import HTTPError, URLError
 from xml.etree import ElementTree as ET
 
-FEED_URL = "https://theshiftingtide.substack.com/feed"
+FEED_URL = "https://substack-feed-proxy.piero-ferrando.workers.dev/"
 MAX_POSTS = 12
 NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
