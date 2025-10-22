@@ -13,7 +13,7 @@ from urllib.error import HTTPError, URLError
 from xml.etree import ElementTree as ET
 
 # --- SETTINGS ---
-FEED_URL = "https://substack-feed-proxy.<YOUR_SUBDOMAIN>.workers.dev/"  # your Worker URL
+FEED_URL = "https://substack-feed-proxy.piero-ferrando.workers.dev/"  # your Worker URL
 MAX_POSTS = 12
 NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
